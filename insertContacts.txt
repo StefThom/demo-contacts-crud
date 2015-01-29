@@ -1,0 +1,9 @@
+db.contacts.insert(
+	[
+		{ name: "Zahra", email : "zahra@email.com", phone: "01783992344" },
+		{ name: "Vika", email : "vika@email.com", phone: "01783909302" },
+		{ name: "James", email : "james@email.com", phone: "01783993034" },
+		{ name: "Simon", email : "simon@email.com", phone: "018993937442" },
+		{ name: "Mike", email : "mike@email.com", phone: "0178290393793" }
+	]
+)

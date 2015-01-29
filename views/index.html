@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="ContactService">
+<head>
+    <title>Demo AngularJS+Node.js+Express+MongoDB</title>
+    <link rel="stylesheet" href="css/simple.css">
+    <script src="lib/angular.min.js"></script>
+    <script src="services/contactservice.js"></script>
+</head>
+<body ng-controller='MyControlller' data-ng-init="getAllData()" >
+<header>
+    <h1>Demo AngularJS+Node.js+Express+MongoDB</h1>
+</header>
+
+<br>
+<div >
+    <form name="form" ng-submit="submitForm(form.$valid)" novalidate >
+        <div>
+            <p>
+                <input type="hidden" ng-model="contact._id">
+                <label class="control-label" for="name">Name:</label>
+                <input type="text" id="name" ng-model='contact.name' placeholder="Name" required>
+            </p>
+            <p>
+                <label class="control-label" for="email">Email:</label>
+                <input type="text" id="email" ng-model='contact.email'  placeholder="Email" required>
+            </p>
+            <p>
+                <label class="control-label" for="phone">Phone:</label>
+                <input type="text" id="phone" ng-model='contact.phone'  placeholder="Phone" required>
+            </p>
+            <p>
+                <button ng-disabled="form.$invalid" ng-click="save()" >Save</button> Response from server: {{ result }}
+            </p>
+        </div>
+    </form>
+</div>
+<br>
+<p>
+    <button ng-click="getAllData()" >Reload</button>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="contact in contacts">
+    <tr ng-class="{even: $even, odd: $odd}">
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td><a href="javascript:void(0)" ng-click="edit(contact)">edit</a> |
+            <a href="javascript:void(0)" ng-click="delete(contact._id)">delete</a></td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "name": "demo-contacts-crud",
+    "description": "simple CRUD-app using angulerjs+nodejs+express+mongodb",
+    "version": "0.0.1",
+    "private": true,
+	"scripts": {
+	  "start": "node app.js"
+	},
+    "dependencies": {
+        "express": "3.x",
+        "mongodb": "latest"
+    }
+}
